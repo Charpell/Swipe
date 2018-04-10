@@ -103,7 +103,7 @@ class Deck extends Component {
           {this.props.renderCard(item)}
         </View>
       )
-    }).reverse()
+    }).reverse() // Renders the first Card
   }
 
   render() {
@@ -115,7 +115,7 @@ class Deck extends Component {
   }
 }
 
-
+// The position absolute causes the card to stack on each other
 const styles = {
   cardStyle: {
     position: 'absolute',

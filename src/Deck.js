@@ -50,7 +50,7 @@ class Deck extends Component {
 
     direction === 'right' ? onSwipeRight(item) : onSwipeLeft(item)
     this.state.position.setValue({ x: 0, y: 0 })
-    
+
     this.setState({ index: this.state.index + 1 })
   }
   
@@ -77,6 +77,10 @@ class Deck extends Component {
   }
 
   renderCards() {
+    if(this.state.index >= this.props.data.length) {
+      return this.props.renderNoMoreCards();
+    }
+
     return this.props.data.map((item, i)=> {
       if (i < this.state.index) {
         return null
